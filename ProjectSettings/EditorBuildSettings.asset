@@ -4,5 +4,8 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/minigame1_platformer/MInigame1Platformer2d.unity
+    guid: 9473628c9d877854b9d4ae55bff96c6f
   m_configObjects: {}
