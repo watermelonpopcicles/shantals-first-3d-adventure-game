@@ -19,7 +19,7 @@ public class PlayerMovement : MonoBehaviour
     public float OrbitDegrees = 1f;
     void Start()
     {
-        controller = GetComponentInChildren<CharacterController>();
+        controller = GetComponent<CharacterController>();
 
     }
 
