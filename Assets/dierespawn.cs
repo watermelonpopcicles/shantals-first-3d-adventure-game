@@ -32,8 +32,12 @@ public class dierespawn : MonoBehaviour
     }
 
     IEnumerator collisionStuff() {
-        Player.gameObject.GetComponent<CharacterController>().enabled = false;
-        yield return new WaitForSeconds(.8f);
-        Player.gameObject.GetComponent<CharacterController>().enabled = true;
+        CharacterController cc = Player.gameObject.GetComponent<CharacterController>();
+        if (cc != null)
+        {
+            cc.enabled = false;
+            yield return new WaitForSeconds(.8f);
+            cc.enabled = true;
+        }
     }
 }
