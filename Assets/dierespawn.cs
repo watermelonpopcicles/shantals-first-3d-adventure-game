@@ -21,7 +21,7 @@ public class dierespawn : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         Debug.Log(collision.gameObject.tag);
-        if (collision.gameObject.CompareTag("Player")) 
+        if (collision.gameObject.CompareTag("Player") || collision.gameObject.CompareTag("rollyball")) 
         {
             
             collision.transform.position = spawn.position;

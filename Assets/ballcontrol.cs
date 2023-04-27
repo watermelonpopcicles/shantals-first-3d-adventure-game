@@ -7,6 +7,7 @@ public class ballcontrol : MonoBehaviour
     public float speed = 3;
     Rigidbody rb;
     public bool possessed;
+    public float rotationspeed = 90.0f;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,10 +18,14 @@ public class ballcontrol : MonoBehaviour
     void Update()
     {
         if (possessed)
-        {
-            float z = Input.GetAxis("Horizontal");
+        { 
+            //float z = Input.GetAxis("Horizontal");
+
+        
             float x = Input.GetAxis("Vertical");
+            float z = 0;
             Vector3 movement = new Vector3(x, 0, -z);
+            movement = Camera.main.transform.TransformDirection(movement);
             rb.AddTorque(movement * 1000, ForceMode.Acceleration);
         }
         
