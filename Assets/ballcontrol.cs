@@ -8,10 +8,14 @@ public class ballcontrol : MonoBehaviour
     Rigidbody rb;
     public bool possessed;
     public float rotationspeed = 90.0f;
+    public GameObject balllight;
+
+    public GameObject Player;
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+        balllight.SetActive(false);
     }
 
     // Update is called once per frame
@@ -27,6 +31,14 @@ public class ballcontrol : MonoBehaviour
             Vector3 movement = new Vector3(x, 0, -z);
             movement = Camera.main.transform.TransformDirection(movement);
             rb.AddTorque(movement * 1000, ForceMode.Acceleration);
+            balllight.SetActive(true);
+
+            if (Input.GetKeyDown(KeyCode.B))
+            {
+                Player.SetActive(true);
+                Player.GetComponent<interactable>().resetplayer();
+                possessed = false;
+            }
         }
         
     }
