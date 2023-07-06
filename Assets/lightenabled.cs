@@ -27,6 +27,7 @@ public class lightenabled : MonoBehaviour
             Cactuslight.enabled = true;
             cactusbing.Play();
             alreadyhit = true;
+            GetComponentInParent<desert_manager>().cactushit += 1;
         }
     }
 }
