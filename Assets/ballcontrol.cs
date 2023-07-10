@@ -38,6 +38,7 @@ public class ballcontrol : MonoBehaviour
                 Player.SetActive(true);
                 Player.GetComponent<interactable>().resetplayer();
                 possessed = false;
+                balllight.SetActive(false);
             }
         }
         

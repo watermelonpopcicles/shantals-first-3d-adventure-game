@@ -10,6 +10,7 @@ public class interactable : MonoBehaviour
     private Vector3 offset;
     private Vector3 rotationOffset;
     public GameObject hinttext1;
+    public bool triggered;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,7 +23,18 @@ public class interactable : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if(Input.GetKeyDown(KeyCode.E))
+        {
+
+            possedobject.GetComponent<ballcontrol>().possessed = true;
+            possedobject.GetComponent<ballcontrol>().Player = gameObject;
+
+            Player.SetActive(false);
+            mcamera.transform.SetParent(null);
+            mcamera.GetComponent<orbit>().enabled = true;
+            hinttext1.SetActive(false);
+            // mcamera.GetComponent<followplayer>().Player = other.transform;
+        }
     }
 
     public void resetplayer()
@@ -41,23 +53,14 @@ public class interactable : MonoBehaviour
         //mcamera.GetComponent<followplayer>().Player = null;
 
     }
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("rollyball"))
         {
             hinttext1.SetActive(true);
-        }
-        if (other.CompareTag("rollyball") && Input.GetKeyDown(KeyCode.E))
-        {
-                possedobject = other.gameObject;
-            other.GetComponent<ballcontrol>().possessed = true;
-            other.GetComponent<ballcontrol>().Player = gameObject;
-
-            Player.SetActive(false);
-            mcamera.transform.SetParent(null);
-            mcamera.GetComponent<orbit>().enabled = true;
-            hinttext1.SetActive(false);
-            // mcamera.GetComponent<followplayer>().Player = other.transform;
+            triggered = true;
+            possedobject = other.gameObject;
         }
     }
     private void OnTriggerStay(Collider other)
@@ -65,17 +68,8 @@ public class interactable : MonoBehaviour
         if (other.CompareTag("rollyball"))
         {
             hinttext1.SetActive(true);
-        }
-        if (other.CompareTag("rollyball") && Input.GetKeyDown(KeyCode.E))
-        {
-                possedobject = other.gameObject;
-            other.GetComponent<ballcontrol>().Player = gameObject;
-            other.GetComponent<ballcontrol>().possessed = true;
-            Player.SetActive(false);
-            mcamera.transform.SetParent(null);
-            mcamera.GetComponent<orbit>().enabled = true;
-            mcamera.GetComponent<orbit>().focus = other.transform;
-            hinttext1.SetActive(false);
+            triggered = true;
+            possedobject = other.gameObject;
         }
     }
 
@@ -84,6 +78,8 @@ public class interactable : MonoBehaviour
         if (other.CompareTag("rollyball"))
         {
             hinttext1.SetActive(false);
+            triggered = false;
+            possedobject = null;
         }
     }
 }
