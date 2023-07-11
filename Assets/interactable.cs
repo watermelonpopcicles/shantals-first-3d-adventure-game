@@ -56,6 +56,7 @@ public class interactable : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        Debug.Log(other.tag);
         if (other.CompareTag("rollyball"))
         {
             hinttext1.SetActive(true);
@@ -65,6 +66,7 @@ public class interactable : MonoBehaviour
     }
     private void OnTriggerStay(Collider other)
     {
+        Debug.Log(other.tag);
         if (other.CompareTag("rollyball"))
         {
             hinttext1.SetActive(true);
