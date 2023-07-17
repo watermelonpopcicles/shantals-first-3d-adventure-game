@@ -30,7 +30,7 @@ public class desert_manager : MonoBehaviour
     IEnumerator ShovelAnimation()
     {
         Shovel.SetActive(true);
-        yield return new WaitForSeconds(10);
+        yield return new WaitForSeconds(15);
         Shovel.SetActive(false);
         mound.SetActive(false);
         treasurechest.SetActive(true);

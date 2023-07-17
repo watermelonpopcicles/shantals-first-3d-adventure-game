@@ -36,7 +36,7 @@ public class ballcontrol : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.B))
             {
                 Player.SetActive(true);
-                Player.GetComponent<interactable>().resetplayer();
+                Player.GetComponent<interactable>().resetplayer(transform.position);
                 possessed = false;
                 balllight.SetActive(false);
             }

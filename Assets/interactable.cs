@@ -23,21 +23,24 @@ public class interactable : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.E))
+        if (triggered)
         {
+            if (Input.GetKeyDown(KeyCode.E))
+            {
 
-            possedobject.GetComponent<ballcontrol>().possessed = true;
-            possedobject.GetComponent<ballcontrol>().Player = gameObject;
+                possedobject.GetComponent<ballcontrol>().possessed = true;
+                possedobject.GetComponent<ballcontrol>().Player = gameObject;
 
-            Player.SetActive(false);
-            mcamera.transform.SetParent(null);
-            mcamera.GetComponent<orbit>().enabled = true;
-            hinttext1.SetActive(false);
-            // mcamera.GetComponent<followplayer>().Player = other.transform;
+                Player.SetActive(false);
+                mcamera.transform.SetParent(null);
+                mcamera.GetComponent<orbit>().enabled = true;
+                hinttext1.SetActive(false);
+                // mcamera.GetComponent<followplayer>().Player = other.transform;
+            }
         }
     }
 
-    public void resetplayer()
+    public void resetplayer(Vector3 resetpos)
     {
         if (possedobject == null)
         {
@@ -47,6 +50,7 @@ public class interactable : MonoBehaviour
             possedobject.GetComponent<ballcontrol>().possessed = false;
             Player.SetActive(true);
             mcamera.transform.SetParent(Player.transform);
+        Player.transform.position = resetpos;
             mcamera.transform.localPosition = offset;
             mcamera.GetComponent<orbit>().enabled = false;
         mcamera.transform.localEulerAngles = rotationOffset;
