@@ -23,6 +23,7 @@ public class boxopen : MonoBehaviour
             if(Input.GetKeyDown(KeyCode.E))
             {
                 chest.SetBool("open", true);
+                GetComponent<AudioSource>().Play();
             }
         }
     }
