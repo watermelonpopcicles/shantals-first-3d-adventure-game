@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: f096582eedb917640b83ee68fa00c225
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - Wagashi
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: d27349c4ff6d921488191878a6a7631e, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

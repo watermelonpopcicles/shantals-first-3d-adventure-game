@@ -13,6 +13,7 @@ public class boxopen : MonoBehaviour
     {
        chesthint.SetActive(false);
         chest.SetBool("open", false);
+
     }
 
     // Update is called once per frame
@@ -29,6 +30,7 @@ public class boxopen : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
+        if(GameObject.FindObjectOfType<desert_manager>().cactushit<5) { return; }
         if (other.gameObject.tag == "Player"){
             chesthint.SetActive(true);
             isplayernear = true;
