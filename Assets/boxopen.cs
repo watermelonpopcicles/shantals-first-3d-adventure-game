@@ -5,6 +5,7 @@ using UnityEngine;
 public class boxopen : MonoBehaviour
 {
     public GameObject chesthint;
+    public GameObject gemhint;
     public Animator chest;
     public bool isplayernear;
 
@@ -12,6 +13,7 @@ public class boxopen : MonoBehaviour
     void Start()
     {
        chesthint.SetActive(false);
+        gemhint.SetActive(false);
         chest.SetBool("open", false);
 
     }
@@ -21,10 +23,13 @@ public class boxopen : MonoBehaviour
     {
         if (isplayernear)
         {
-            if(Input.GetKeyDown(KeyCode.E))
+            if(Input.GetKeyDown(KeyCode.Q))
             {
                 chest.SetBool("open", true);
                 GetComponent<AudioSource>().Play();
+                chesthint.SetActive(false);
+                gemhint.SetActive(true);
+
             }
         }
     }
