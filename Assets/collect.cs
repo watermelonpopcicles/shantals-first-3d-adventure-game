@@ -37,7 +37,7 @@ public class collect : MonoBehaviour
                 dock.SetActive(true);
                 boat.SetActive(true);
                 signpost.SetActive(true);
-                spawnpoint.position = boat.transform.position + new Vector3(0, 6, 0);
+                spawnpoint.position = boat.transform.position + new Vector3(0, (float)3.2, -1);
                 spawnpoint.SetParent(boat.transform);
 
             }
