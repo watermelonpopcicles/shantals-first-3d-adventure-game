@@ -9,7 +9,9 @@ public class collect : MonoBehaviour
     public GameObject dock;
     public GameObject boat;
     public GameObject signpost;
+    public GameObject rollyball;
     public Transform spawnpoint;
+    public GameObject ballhint;
 
 
     // Start is called before the first frame update
@@ -39,6 +41,8 @@ public class collect : MonoBehaviour
                 signpost.SetActive(true);
                 spawnpoint.position = boat.transform.position + new Vector3(0, (float)3.2, -1);
                 spawnpoint.SetParent(boat.transform);
+                rollyball.SetActive(false);
+                ballhint.SetActive(false);
 
             }
         }

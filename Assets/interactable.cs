@@ -11,6 +11,7 @@ public class interactable : MonoBehaviour
     private Vector3 rotationOffset;
     public GameObject hinttext1;
     public bool triggered;
+    public Transform ChickCamera;
     // Start is called before the first frame update
     void Start()
     {
@@ -49,7 +50,7 @@ public class interactable : MonoBehaviour
 
             possedobject.GetComponent<ballcontrol>().possessed = false;
             Player.SetActive(true);
-            mcamera.transform.SetParent(Player.transform);
+            mcamera.transform.SetParent(ChickCamera);
         Player.transform.position = resetpos;
             mcamera.transform.localPosition = offset;
             mcamera.GetComponent<orbit>().enabled = false;

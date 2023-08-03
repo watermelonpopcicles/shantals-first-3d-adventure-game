@@ -9,6 +9,21 @@ public class rideboat : MonoBehaviour
     public GameObject spawn;
     public Animator boatanim;
     public GameObject boathint;
+    public Transform Cameraboat;
+
+    public Transform chickcamera;
+
+    public void trip1arrived()
+    {
+        Debug.Log("arrived");
+        Player.transform.SetParent(null);
+        Player.GetComponent<PlayerMovement>().enabled = true;
+        Player.GetComponent<CharacterController>().enabled = true; 
+        Player.GetComponent<Rigidbody>().isKinematic = false;
+        Camera.main.transform.SetParent(chickcamera);
+        Camera.main.transform.localPosition = Vector3.zero;
+        Camera.main.transform.localEulerAngles = Vector3.zero;
+    }
     // Start is called before the first frame update
     void Start()
     {
@@ -27,8 +42,17 @@ public class rideboat : MonoBehaviour
                 boatanim.SetTrigger("startboat1");
                 boathint.SetActive(false);
                 Player.GetComponent<PlayerMovement>().enabled = false;
+                Player.GetComponentInChildren<Animator>().SetBool("Walk", false);
+                Player.GetComponentInChildren<Animator>().SetBool("Run", false);
+                Player.GetComponentInChildren<Animator>().SetBool("Eat", false);
+                Player.GetComponentInChildren<Animator>().ResetTrigger("Jump");
                 Player.GetComponent<CharacterController>().enabled = false;
                 Player.GetComponent<Rigidbody>().isKinematic = true;
+
+                Camera.main.transform.SetParent(Cameraboat);
+                Camera.main.transform.localPosition = Vector3.zero;
+                Camera.main.transform.localEulerAngles = Vector3.zero;
+
                 
             }
         }
