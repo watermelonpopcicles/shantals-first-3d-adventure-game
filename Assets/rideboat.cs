@@ -23,6 +23,7 @@ public class rideboat : MonoBehaviour
         Camera.main.transform.SetParent(chickcamera);
         Camera.main.transform.localPosition = Vector3.zero;
         Camera.main.transform.localEulerAngles = Vector3.zero;
+        GetComponent<AudioSource>().Pause();
     }
     // Start is called before the first frame update
     void Start()
@@ -56,6 +57,7 @@ public class rideboat : MonoBehaviour
                 
             }
         }
+            
     }
     private void OnTriggerEnter(Collider other)
     {
