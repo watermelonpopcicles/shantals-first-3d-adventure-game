@@ -12,6 +12,7 @@ public class collect : MonoBehaviour
     public GameObject rollyball;
     public Transform spawnpoint;
     public GameObject ballhint;
+    public bool collected;
 
 
     // Start is called before the first frame update
@@ -25,6 +26,10 @@ public class collect : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (collected)
+        {
+            return;
+        }
         if (ready)
         {
             if (Input.GetKeyDown(KeyCode.C)) 
@@ -43,6 +48,7 @@ public class collect : MonoBehaviour
                 spawnpoint.SetParent(boat.transform);
                 rollyball.SetActive(false);
                 ballhint.SetActive(false);
+                collected = true;
 
             }
         }
