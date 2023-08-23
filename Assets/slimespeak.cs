@@ -11,6 +11,8 @@ public class slimespeak : MonoBehaviour
     bool chatting;
     public TMP_Text chat;
     GameObject player;
+    public Transform chickposition;
+    public Transform oldcampos;
 
     // Start is called before the first frame update
     void Start()
@@ -28,16 +30,26 @@ public class slimespeak : MonoBehaviour
                 chatting = true;
                 canchat = false;
                 player.GetComponent<PlayerMovement>().enabled = false;
+                player.GetComponent<CharacterController>().enabled = false;
                 Camera.main.transform.SetParent(cameraloc);
                 Camera.main.transform.localPosition = Vector3.zero;
                 Camera.main.transform.localEulerAngles = Vector3.zero;
                 chat.gameObject.SetActive(true);
+                player.transform.position = chickposition.position;
+                player.transform.rotation = chickposition.rotation;
 
             }
+
+           
 
         }
         if(chatting) 
         {
+            if (Input.GetKeyDown(KeyCode.B))
+            {
+                endchat();
+                
+            }
             if (Input.GetKeyDown(KeyCode.E)) 
             {
                 chatnum++;
@@ -59,9 +71,26 @@ public class slimespeak : MonoBehaviour
             {
                 chat.text = "Use this bow and arrow to shoot all the targets in 1 minute!";
             }
+            if (chatnum == 4)
+            {
+                endchat();
+            }
         }
         
 
+    }
+
+    void endchat()
+    {
+        chatting = false;
+        canchat = false;
+        player.GetComponent<PlayerMovement>().enabled = true;
+        player.GetComponent<CharacterController>().enabled = true;
+        Camera.main.transform.SetParent(oldcampos);
+        Camera.main.transform.localPosition = Vector3.zero;
+        Camera.main.transform.localEulerAngles = Vector3.zero;
+        chat.text = "...";
+        chatnum = 0;
     }
     private void OnTriggerEnter(Collider other)
     {
