@@ -13,6 +13,7 @@ public class slimespeak : MonoBehaviour
     GameObject player;
     public Transform chickposition;
     public Transform oldcampos;
+    public GameObject arrowshootplayer; 
 
     // Start is called before the first frame update
     void Start()
@@ -73,6 +74,16 @@ public class slimespeak : MonoBehaviour
             }
             if (chatnum == 4)
             {
+                chat.text = "Are you ready? Yes(Y)/No(E/B)";
+                if (Input.GetKeyDown(KeyCode.Y))
+                {
+                    player.gameObject.SetActive(false);
+
+                }
+            }
+            if (chatnum == 5)
+            {
+                
                 endchat();
             }
         }
@@ -80,6 +91,7 @@ public class slimespeak : MonoBehaviour
 
     }
 
+    
     void endchat()
     {
         chatting = false;
