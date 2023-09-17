@@ -18,13 +18,19 @@ public class shooting : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (ctime >= allowedshotspersec) 
+        if (ctime >= allowedshotspersec)
         {
-            if (Input.GetMouseButton(0)) 
+            if (Input.GetMouseButton(0))
             {
                 GameObject clone = Instantiate(arrow, arrowspawn.position, arrowspawn.rotation);
-                ctime 
+                ctime = 0;
+                Rigidbody rb = clone.GetComponent<Rigidbody>();
+                rb.AddForce(clone.transform.forward * strength, ForceMode.Impulse);
+                
             }
-        }   
+        }
+        else {
+            ctime += Time.deltaTime;
+        }
     }
 }

@@ -9,7 +9,7 @@ public class firstpersonshoot : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        transform.localEulerAngles = Vector3.zero;
     }
 
     // Update is called once per frame
@@ -22,8 +22,8 @@ public class firstpersonshoot : MonoBehaviour
         Vector3 mov = new Vector3(v, h, 0);
         transform.Rotate(mov * Time.deltaTime);
 
-        Vector3 temp = transform.localEulerAngles;
+        Vector3 temp = transform.eulerAngles;
         temp.z = 0;
-        transform.localEulerAngles = temp;
+        transform.eulerAngles = temp;
     }
 }
