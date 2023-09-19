@@ -12,7 +12,7 @@ public class shooting : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        Cursor.lockState = CursorLockMode.Locked;
     }
 
     // Update is called once per frame
@@ -25,7 +25,7 @@ public class shooting : MonoBehaviour
                 GameObject clone = Instantiate(arrow, arrowspawn.position, arrowspawn.rotation);
                 ctime = 0;
                 Rigidbody rb = clone.GetComponent<Rigidbody>();
-                rb.AddForce(clone.transform.forward * strength, ForceMode.Impulse);
+                rb.AddForce(arrowspawn.forward * strength, ForceMode.Impulse);
                 
             }
         }

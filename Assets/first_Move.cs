@@ -9,6 +9,7 @@ public class first_Move : MonoBehaviour
     public float speed = 6.0f;
     public float jumpSpeed = 8.0f;
     public float gravity = 20.0f;
+    public Transform fixedplayerposition;
 
     private Vector3 moveDirection = Vector3.zero;
 
@@ -25,6 +26,7 @@ public class first_Move : MonoBehaviour
             // move direction directly from axes
 
             moveDirection = new Vector3(Input.GetAxis("Horizontal"), 0.0f, Input.GetAxis("Vertical"));
+            moveDirection = fixedplayerposition.transform.TransformDirection(moveDirection);
             moveDirection *= speed;
 
             if (Input.GetButton("Jump"))
