@@ -49,6 +49,7 @@ public class collect : MonoBehaviour
                 rollyball.SetActive(false);
                 ballhint.SetActive(false);
                 collected = true;
+                gameObject.SetActive(false);
 
             }
         }
