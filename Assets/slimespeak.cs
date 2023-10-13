@@ -18,7 +18,7 @@ public class slimespeak : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        arrowshootplayer.SetActive(false);
     }
 
     // Update is called once per frame
@@ -77,7 +77,9 @@ public class slimespeak : MonoBehaviour
                 chat.text = "Are you ready? Yes(Y)/No(E/B)";
                 if (Input.GetKeyDown(KeyCode.Y))
                 {
+                    Camera.main.gameObject.SetActive(false);
                     player.gameObject.SetActive(false);
+                    arrowshootplayer.SetActive(true);
 
                 }
             }

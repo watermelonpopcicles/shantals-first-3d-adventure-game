@@ -20,7 +20,7 @@ public class dierespawn : MonoBehaviour
     }
     private void OnCollisionEnter(Collision collision)
     {
-        Debug.Log(collision.gameObject.tag);
+        //Debug.Log(collision.gameObject.tag);
         if (collision.gameObject.CompareTag("Player") || collision.gameObject.CompareTag("rollyball")) 
         {
             

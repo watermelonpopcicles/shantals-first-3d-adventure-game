@@ -3193,7 +3193,6 @@ GameObject:
   - component: {fileID: 255761479}
   - component: {fileID: 255761482}
   - component: {fileID: 255761481}
-  - component: {fileID: 255761480}
   m_Layer: 0
   m_Name: Cylinder (1)
   m_TagString: Untagged
@@ -3216,20 +3215,6 @@ Transform:
   m_Father: {fileID: 1268330451}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 85.637}
---- !u!136 &255761480
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 255761478}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.5000001
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
 --- !u!23 &255761481
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -7374,66 +7359,66 @@ Transform:
   m_Children:
   - {fileID: 1666658588}
   - {fileID: 1881649123}
-  - {fileID: 504807685}
-  - {fileID: 943978443}
   - {fileID: 1500047204}
   - {fileID: 1677658906}
+  - {fileID: 504807685}
+  - {fileID: 943978443}
   - {fileID: 514947141}
   - {fileID: 36993849}
-  - {fileID: 147890540}
-  - {fileID: 260332154}
   - {fileID: 1193107406}
+  - {fileID: 147890540}
   - {fileID: 1331233114}
+  - {fileID: 260332154}
   - {fileID: 1057360321}
   - {fileID: 2146901432}
   - {fileID: 1512264290}
-  - {fileID: 1042957386}
   - {fileID: 667448484}
   - {fileID: 1586828445}
+  - {fileID: 1042957386}
   - {fileID: 1098795783}
-  - {fileID: 1739762962}
   - {fileID: 861674851}
-  - {fileID: 1066664671}
+  - {fileID: 1739762962}
   - {fileID: 2021772154}
-  - {fileID: 790884516}
+  - {fileID: 1066664671}
   - {fileID: 860263125}
+  - {fileID: 790884516}
   - {fileID: 1605573684}
   - {fileID: 1574930329}
   - {fileID: 336661763}
-  - {fileID: 121463966}
   - {fileID: 1546176520}
-  - {fileID: 798693911}
+  - {fileID: 121463966}
   - {fileID: 732730019}
-  - {fileID: 18205323}
+  - {fileID: 798693911}
   - {fileID: 1166118517}
+  - {fileID: 18205323}
   - {fileID: 2087192288}
   - {fileID: 1136433357}
   - {fileID: 726397495}
-  - {fileID: 141693667}
   - {fileID: 1411527248}
   - {fileID: 1670097778}
+  - {fileID: 141693667}
+  - {fileID: 1099321406}
+  - {fileID: 820620113}
   - {fileID: 373394609}
   - {fileID: 1647873039}
   - {fileID: 935232030}
-  - {fileID: 1099321406}
   - {fileID: 1620138085}
-  - {fileID: 993121990}
-  - {fileID: 820620113}
   - {fileID: 1376081449}
+  - {fileID: 993121990}
+  - {fileID: 1300217875}
+  - {fileID: 1571405465}
   - {fileID: 699288230}
   - {fileID: 1145462752}
   - {fileID: 1180357517}
-  - {fileID: 1300217875}
-  - {fileID: 1019201045}
-  - {fileID: 1571405465}
   - {fileID: 1256706699}
-  - {fileID: 445720326}
-  - {fileID: 1197366966}
-  - {fileID: 1843601483}
-  - {fileID: 1708307680}
   - {fileID: 1268330451}
+  - {fileID: 1843601483}
+  - {fileID: 445720326}
+  - {fileID: 1708307680}
+  - {fileID: 1197366966}
   - {fileID: 1873491744}
   - {fileID: 1907114910}
+  - {fileID: 1019201045}
   - {fileID: 870704384}
   - {fileID: 2136489845}
   - {fileID: 352473328}
@@ -7622,7 +7607,7 @@ MeshRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!1001 &670648393
 PrefabInstance:
@@ -8685,7 +8670,6 @@ GameObject:
   - component: {fileID: 754938329}
   - component: {fileID: 754938332}
   - component: {fileID: 754938331}
-  - component: {fileID: 754938330}
   m_Layer: 0
   m_Name: Cylinder (3)
   m_TagString: Untagged
@@ -8708,20 +8692,6 @@ Transform:
   m_Father: {fileID: 1268330451}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 85.637}
---- !u!136 &754938330
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 754938328}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.5000001
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
 --- !u!23 &754938331
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -9290,7 +9260,7 @@ MonoBehaviour:
   gemhint: {fileID: 1774007613}
   dock: {fileID: 853592192}
   boat: {fileID: 1752697558}
-  signpost: {fileID: 0}
+  signpost: {fileID: 1774007613}
   rollyball: {fileID: 1003256745}
   spawnpoint: {fileID: 922099468}
   ballhint: {fileID: 1289483851}
@@ -9812,7 +9782,6 @@ GameObject:
   - component: {fileID: 846119331}
   - component: {fileID: 846119334}
   - component: {fileID: 846119333}
-  - component: {fileID: 846119332}
   m_Layer: 0
   m_Name: Cylinder (4)
   m_TagString: Untagged
@@ -9835,20 +9804,6 @@ Transform:
   m_Father: {fileID: 1268330451}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 85.637}
---- !u!136 &846119332
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 846119330}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.5000001
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
 --- !u!23 &846119333
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -11313,7 +11268,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 693974598}
-  m_RootOrder: 0
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &963194229
 MonoBehaviour:
@@ -11589,7 +11544,6 @@ GameObject:
   - component: {fileID: 966481830}
   - component: {fileID: 966481833}
   - component: {fileID: 966481832}
-  - component: {fileID: 966481831}
   m_Layer: 0
   m_Name: Cylinder (2)
   m_TagString: Untagged
@@ -11612,20 +11566,6 @@ Transform:
   m_Father: {fileID: 1268330451}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 85.637}
---- !u!136 &966481831
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 966481829}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.5000001
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
 --- !u!23 &966481832
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -13920,14 +13860,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1099321405}
-  m_LocalRotation: {x: 0.02780068, y: -0.88178474, z: 0.10281495, w: 0.459469}
-  m_LocalPosition: {x: 75.84, y: -5.87, z: 1.03}
+  m_LocalRotation: {x: 0.010456643, y: -0.9958215, z: -0.045595862, w: 0.078430265}
+  m_LocalPosition: {x: 72.76944, y: -7.881314, z: 4.893959}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 658304514}
   m_RootOrder: -1
-  m_LocalEulerAnglesHint: {x: 11.939, y: -124.676, z: 2.663}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1112316424 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4956255927207046, guid: c04be9f92ebf58b46b2204ac3aaa8785, type: 3}
@@ -15511,7 +15451,7 @@ GameObject:
   - component: {fileID: 1268330451}
   - component: {fileID: 1268330454}
   - component: {fileID: 1268330453}
-  - component: {fileID: 1268330452}
+  - component: {fileID: 1268330455}
   m_Layer: 0
   m_Name: Target (6)
   m_TagString: Untagged
@@ -15538,20 +15478,6 @@ Transform:
   m_Father: {fileID: 658304514}
   m_RootOrder: 54
   m_LocalEulerAnglesHint: {x: -4.239, y: -76.285, z: 110.328}
---- !u!136 &1268330452
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1268330450}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.5000001
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
 --- !u!23 &1268330453
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -15602,6 +15528,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1268330450}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!65 &1268330455
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1268330450}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 2.000013, z: 1.0000002}
+  m_Center: {x: 0.000000059604645, y: 5.1159077e-13, z: -0.00000008940697}
 --- !u!1001 &1270729483
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -16923,14 +16862,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1376081448}
-  m_LocalRotation: {x: -0.039231014, y: 0.751979, z: 0.021232255, w: 0.6576761}
-  m_LocalPosition: {x: 69.18, y: -8.84, z: -1.06}
+  m_LocalRotation: {x: -0.011370185, y: -0.92299926, z: -0.045376685, w: -0.3819478}
+  m_LocalPosition: {x: 70.79, y: -9.14, z: 2.06}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 658304514}
   m_RootOrder: -1
-  m_LocalEulerAnglesHint: {x: -4.792, y: 97.729, z: -1.787}
+  m_LocalEulerAnglesHint: {x: -4.306, y: -225.081, z: 3.199}
 --- !u!4 &1383491349 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4956255927207046, guid: c04be9f92ebf58b46b2204ac3aaa8785, type: 3}
@@ -16985,7 +16924,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1394635554}
   m_LocalRotation: {x: -0, y: -0.22269498, z: -0, w: 0.9748882}
-  m_LocalPosition: {x: -152.834, y: 4.9, z: -173.26}
+  m_LocalPosition: {x: 182.6, y: 4.53, z: -99.1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -19804,7 +19743,7 @@ MonoBehaviour:
   chat: {fileID: 670470835}
   chickposition: {fileID: 1376081449}
   oldcampos: {fileID: 693974598}
-  arrowshootplayer: {fileID: 0}
+  arrowshootplayer: {fileID: 1040003434}
 --- !u!4 &1654311669 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4063541705819162, guid: 0761e9c9debdfd34fa20f5859c6f08ff, type: 3}
