@@ -5,7 +5,7 @@ using UnityEngine;
 public class slimetextbubbleappear : MonoBehaviour
 {
     public GameObject slimebubble;
-    public bool playernearslime;
+    bool playernearslime;
     // Start is called before the first frame update
     void Start()
     {
@@ -15,18 +15,20 @@ public class slimetextbubbleappear : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (playernearslime) 
-        {
-            slimebubble.SetActive(true);
-
-        }
-        
-
 
     }
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider other)
     {
-        if (collision.comparetag)
-        playernearslime = false
+        if (other.gameObject.CompareTag("Player")) {
+            slimebubble.SetActive(true);
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.CompareTag("Player"))
+        {
+            slimebubble.SetActive(false);
+        }
     }
 }

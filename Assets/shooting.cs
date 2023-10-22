@@ -8,16 +8,18 @@ public class shooting : MonoBehaviour
     public float FOV_Aim = 20;
     public float lerpspeed;
     private float FOV;
-
+    public GameObject crosshair;
     public Transform arrowspawn;
     public float allowedshotspersec;
     public float strength;
     private float ctime;
+    public Transform CameraForward;
     // Start is called before the first frame update
     void Start()
     {
         FOV = Camera.main.fieldOfView;
         Cursor.lockState = CursorLockMode.Locked;
+        crosshair.SetActive(false);
     }
 
     // Update is called once per frame
@@ -25,17 +27,21 @@ public class shooting : MonoBehaviour
     {
         if (Input.GetMouseButton(1))
         {
-            Camera.main.fieldOfView = Mathf.MoveTowards(Camera.main.fieldOfView,FOV_Aim, lerpspeed * Time.deltaTime);
+            Camera.main.fieldOfView = Mathf.MoveTowards(Camera.main.fieldOfView, FOV_Aim, lerpspeed * Time.deltaTime);
+            crosshair.SetActive(true);
             if (ctime >= allowedshotspersec)
             {
-                //if (Input.GetMouseButton(0))
-                //{
-                GameObject clone = Instantiate(arrow, Camera.main.transform.position, Camera.main.transform.rotation);
-                ctime = 0;
-                Rigidbody rb = clone.GetComponent<Rigidbody>();
-                rb.AddForce(Camera.main.transform.forward * strength, ForceMode.Impulse);
 
-                 //}
+                if (Input.GetMouseButton(0))
+                {
+                    GameObject clone = Instantiate(arrow, arrowspawn.position, arrowspawn.rotation);
+                    //clone.transform.forward = arrowspawn.transform.forward - arrowspawn.TransformDirection(new Vector3(0, 0, -62));
+                    clone.transform.LookAt(CameraForward);
+                    ctime = 0;
+                    Rigidbody rb = clone.GetComponent<Rigidbody>();
+                    rb.AddForce(clone.transform.forward * strength, ForceMode.Impulse);
+
+                }
             }
             else
             {
@@ -45,6 +51,7 @@ public class shooting : MonoBehaviour
 
         else
         {
+            crosshair.SetActive(false);
             Camera.main.fieldOfView = Mathf.MoveTowards(Camera.main.fieldOfView, FOV, lerpspeed * Time.deltaTime);
         }
     }
