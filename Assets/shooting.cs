@@ -14,12 +14,17 @@ public class shooting : MonoBehaviour
     public float strength;
     private float ctime;
     public Transform CameraForward;
+    public Transform zoom;
+    public Transform notzoom;
+    public Transform Bow;
     // Start is called before the first frame update
     void Start()
     {
         FOV = Camera.main.fieldOfView;
         Cursor.lockState = CursorLockMode.Locked;
         crosshair.SetActive(false);
+        Bow.SetParent(notzoom);
+        Bow.localPosition = Vector3.zero;
     }
 
     // Update is called once per frame
@@ -29,6 +34,8 @@ public class shooting : MonoBehaviour
         {
             Camera.main.fieldOfView = Mathf.MoveTowards(Camera.main.fieldOfView, FOV_Aim, lerpspeed * Time.deltaTime);
             crosshair.SetActive(true);
+            Bow.SetParent(zoom);
+            Bow.localPosition = Vector3.zero;
             if (ctime >= allowedshotspersec)
             {
 
@@ -41,6 +48,7 @@ public class shooting : MonoBehaviour
                     Rigidbody rb = clone.GetComponent<Rigidbody>();
                     rb.AddForce(clone.transform.forward * strength, ForceMode.Impulse);
 
+
                 }
             }
             else
@@ -52,6 +60,8 @@ public class shooting : MonoBehaviour
         else
         {
             crosshair.SetActive(false);
+            Bow.SetParent(notzoom);
+            Bow.localPosition = Vector3.zero;
             Camera.main.fieldOfView = Mathf.MoveTowards(Camera.main.fieldOfView, FOV, lerpspeed * Time.deltaTime);
         }
     }
