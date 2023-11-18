@@ -17,10 +17,11 @@ public class shooting : MonoBehaviour
     public Transform zoom;
     public Transform notzoom;
     public Transform Bow;
+    public Camera firstCamera;
     // Start is called before the first frame update
     void Start()
     {
-        FOV = Camera.main.fieldOfView;
+        FOV = firstCamera.fieldOfView;
         Cursor.lockState = CursorLockMode.Locked;
         crosshair.SetActive(false);
         Bow.SetParent(notzoom);
@@ -32,7 +33,7 @@ public class shooting : MonoBehaviour
     {
         if (Input.GetMouseButton(1))
         {
-            Camera.main.fieldOfView = Mathf.MoveTowards(Camera.main.fieldOfView, FOV_Aim, lerpspeed * Time.deltaTime);
+            firstCamera.fieldOfView = Mathf.MoveTowards(firstCamera.fieldOfView, FOV_Aim, lerpspeed * Time.deltaTime);
             crosshair.SetActive(true);
             Bow.SetParent(zoom);
             Bow.localPosition = Vector3.zero;
@@ -62,7 +63,10 @@ public class shooting : MonoBehaviour
             crosshair.SetActive(false);
             Bow.SetParent(notzoom);
             Bow.localPosition = Vector3.zero;
-            Camera.main.fieldOfView = Mathf.MoveTowards(Camera.main.fieldOfView, FOV, lerpspeed * Time.deltaTime);
+            if (firstCamera != null)
+            {
+                firstCamera.fieldOfView = Mathf.MoveTowards(firstCamera.fieldOfView, FOV, lerpspeed * Time.deltaTime);
+            }
         }
     }
 }

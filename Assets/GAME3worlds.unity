@@ -2940,7 +2940,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 236094131}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Arrow Pos
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4996,7 +4996,7 @@ GameObject:
   m_Component:
   - component: {fileID: 448457982}
   - component: {fileID: 448457983}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Point Light (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5258,7 +5258,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 474201658}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Aiming Pos
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5979,9 +5979,9 @@ GameObject:
   - component: {fileID: 544715487}
   - component: {fileID: 544715486}
   - component: {fileID: 544715488}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Camera
-  m_TagString: MainCamera
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7136,7 +7136,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 646035925}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: arrowLookAt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7826,7 +7826,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 693974598}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: chickcamera
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8506,6 +8506,10 @@ PrefabInstance:
     - target: {fileID: 109387404376615945, guid: 9095074ccdd5eaa4b852d30ba5b618ce, type: 3}
       propertyPath: m_Name
       value: Arrow_01 Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 109387404376615945, guid: 9095074ccdd5eaa4b852d30ba5b618ce, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 778929150058919603, guid: 9095074ccdd5eaa4b852d30ba5b618ce, type: 3}
       propertyPath: m_RootOrder
@@ -11231,7 +11235,7 @@ GameObject:
   - component: {fileID: 963194226}
   - component: {fileID: 963194229}
   - component: {fileID: 963194230}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Main Camera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
@@ -12724,7 +12728,7 @@ GameObject:
   - component: {fileID: 1040003436}
   - component: {fileID: 1040003439}
   - component: {fileID: 1040003441}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: first one
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12797,11 +12801,12 @@ MonoBehaviour:
   crosshair: {fileID: 2108151922}
   arrowspawn: {fileID: 474201658}
   allowedshotspersec: 0.5
-  strength: 60
+  strength: 45
   CameraForward: {fileID: 646035925}
   zoom: {fileID: 1899977016}
   notzoom: {fileID: 1551802679}
   Bow: {fileID: 2684312175601279155}
+  firstCamera: {fileID: 544715487}
 --- !u!114 &1040003441
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12897,9 +12902,89 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 1394635558}
     m_Modifications:
+    - target: {fileID: 1090722309685604, guid: ca9fda2f4d77c4d4f88d4ed8b939f69b, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1196542995831438, guid: ca9fda2f4d77c4d4f88d4ed8b939f69b, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1219788672176026, guid: ca9fda2f4d77c4d4f88d4ed8b939f69b, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1238433591046712, guid: ca9fda2f4d77c4d4f88d4ed8b939f69b, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1277793154559422, guid: ca9fda2f4d77c4d4f88d4ed8b939f69b, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1311521847767356, guid: ca9fda2f4d77c4d4f88d4ed8b939f69b, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1464708642032188, guid: ca9fda2f4d77c4d4f88d4ed8b939f69b, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1485325965543456, guid: ca9fda2f4d77c4d4f88d4ed8b939f69b, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1487214972516236, guid: ca9fda2f4d77c4d4f88d4ed8b939f69b, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1555205357679088, guid: ca9fda2f4d77c4d4f88d4ed8b939f69b, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1603120834192508, guid: ca9fda2f4d77c4d4f88d4ed8b939f69b, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1619191334028116, guid: ca9fda2f4d77c4d4f88d4ed8b939f69b, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1641085102680434, guid: ca9fda2f4d77c4d4f88d4ed8b939f69b, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1721347007416664, guid: ca9fda2f4d77c4d4f88d4ed8b939f69b, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 1767663768970106, guid: ca9fda2f4d77c4d4f88d4ed8b939f69b, type: 3}
       propertyPath: m_Name
       value: Toon Chick
+      objectReference: {fileID: 0}
+    - target: {fileID: 1767663768970106, guid: ca9fda2f4d77c4d4f88d4ed8b939f69b, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1878532393300130, guid: ca9fda2f4d77c4d4f88d4ed8b939f69b, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1900481753090362, guid: ca9fda2f4d77c4d4f88d4ed8b939f69b, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1948307244030560, guid: ca9fda2f4d77c4d4f88d4ed8b939f69b, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1978537708470802, guid: ca9fda2f4d77c4d4f88d4ed8b939f69b, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1991730269971550, guid: ca9fda2f4d77c4d4f88d4ed8b939f69b, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 4001457575658186, guid: ca9fda2f4d77c4d4f88d4ed8b939f69b, type: 3}
       propertyPath: m_LocalRotation.w
@@ -15505,9 +15590,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1268330450}
-  m_LocalRotation: {x: -0.52320486, y: -0.32868868, z: 0.63204277, w: 0.467699}
-  m_LocalPosition: {x: 69.492, y: -8.493, z: -7.405}
-  m_LocalScale: {x: 1.4072464, y: 0.011795419, z: 1.4994313}
+  m_LocalRotation: {x: 0.29648316, y: 0.29934162, z: 0.6370274, w: 0.6455142}
+  m_LocalPosition: {x: 52.615, y: -1.96, z: 6.814}
+  m_LocalScale: {x: 2.1411252, y: 0.01794673, z: 2.2813847}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 255761479}
@@ -15516,7 +15601,7 @@ Transform:
   - {fileID: 846119331}
   m_Father: {fileID: 658304514}
   m_RootOrder: 54
-  m_LocalEulerAnglesHint: {x: -4.239, y: -76.285, z: 110.328}
+  m_LocalEulerAnglesHint: {x: 0.08, y: 49.835, z: 89.279}
 --- !u!23 &1268330453
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -16934,7 +17019,7 @@ GameObject:
   - component: {fileID: 1394635561}
   - component: {fileID: 1394635562}
   - component: {fileID: 1394635563}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -17312,7 +17397,7 @@ GameObject:
   - component: {fileID: 1436289874}
   - component: {fileID: 1436289878}
   - component: {fileID: 1436289877}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Arrow_01 Variant
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18898,7 +18983,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1551802679}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: notzoom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19953,9 +20038,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1708307679}
-  m_LocalRotation: {x: -0.55565774, y: -0.40952036, z: 0.5481181, w: 0.47233906}
-  m_LocalPosition: {x: 75.231, y: -7.073, z: -8.083}
-  m_LocalScale: {x: 1.4072464, y: 0.011795419, z: 1.4994313}
+  m_LocalRotation: {x: -0.6811745, y: -0.66689193, z: -0.23879123, w: -0.18502772}
+  m_LocalPosition: {x: 71.600006, y: -3.17, z: 9}
+  m_LocalScale: {x: 2.2779098, y: 0.019093245, z: 2.4271295}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 112761719}
@@ -19964,7 +20049,7 @@ Transform:
   - {fileID: 473953993}
   m_Father: {fileID: 658304514}
   m_RootOrder: 54
-  m_LocalEulerAnglesHint: {x: -4.358, y: -87.294, z: 102.651}
+  m_LocalEulerAnglesHint: {x: -3.809, y: -214.986, z: 92.415}
 --- !u!136 &1708307681
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -21176,7 +21261,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1793280436}
   - component: {fileID: 1793280437}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: fixrotation
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -21879,8 +21964,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1873491743}
   m_LocalRotation: {x: -0.56766826, y: -0.5260094, z: 0.43044, w: 0.46453014}
-  m_LocalPosition: {x: 56.8, y: -5.05, z: -13.6}
-  m_LocalScale: {x: 1.4072464, y: 0.011795419, z: 1.4994313}
+  m_LocalPosition: {x: 56.03, y: -3.68, z: -9.2}
+  m_LocalScale: {x: 2.0665412, y: 0.017321574, z: 2.2019148}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 392188465}
@@ -21963,7 +22048,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1875695023}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Normal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -22076,7 +22161,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1881649119}
   m_LocalRotation: {x: -0, y: -0, z: 0.6796797, w: 0.7335091}
-  m_LocalPosition: {x: 46.617, y: -3.028, z: -17.78}
+  m_LocalPosition: {x: 46.617, y: -3.028, z: -8.6}
   m_LocalScale: {x: 2.6665459, y: 0.022350762, z: 2.841224}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -22265,7 +22350,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1899977016}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: zoom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24558,7 +24643,7 @@ GameObject:
   - component: {fileID: 3822354794990246876}
   - component: {fileID: 6366871878747184117}
   - component: {fileID: 6366871878747184118}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Bow_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -96,13 +96,19 @@ public class slimespeak : MonoBehaviour
     
     void endchat()
     {
-        chatting = false;
+        if (Camera.main == null)
+        {
+            return;
+        }
+            chatting = false;
         canchat = false;
         player.GetComponent<PlayerMovement>().enabled = true;
         player.GetComponent<CharacterController>().enabled = true;
-        Camera.main.transform.SetParent(oldcampos);
-        Camera.main.transform.localPosition = Vector3.zero;
-        Camera.main.transform.localEulerAngles = Vector3.zero;
+        
+            Camera.main.transform.SetParent(oldcampos);
+            Camera.main.transform.localPosition = Vector3.zero;
+            Camera.main.transform.localEulerAngles = Vector3.zero;
+        
         chat.text = "...";
         chatnum = 0;
     }
