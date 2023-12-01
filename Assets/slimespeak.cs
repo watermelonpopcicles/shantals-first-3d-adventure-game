@@ -13,7 +13,8 @@ public class slimespeak : MonoBehaviour
     GameObject player;
     public Transform chickposition;
     public Transform oldcampos;
-    public GameObject arrowshootplayer; 
+    public GameObject arrowshootplayer;
+    public grasslandmanager manager;
 
     // Start is called before the first frame update
     void Start()
@@ -80,6 +81,7 @@ public class slimespeak : MonoBehaviour
                     Camera.main.gameObject.SetActive(false);
                     player.gameObject.SetActive(false);
                     arrowshootplayer.SetActive(true);
+                    manager.targetgamestart = true;
 
                 }
             }

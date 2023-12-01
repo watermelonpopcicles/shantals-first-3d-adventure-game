@@ -4,11 +4,24 @@ using UnityEngine;
 
 public class arowdisappear : MonoBehaviour
 {
+    IEnumerator targetdissapears(GameObject target) 
+    {
+        yield return new WaitForSecondsRealtime(1);
+        Debug.Log(target.tag);
+        target.SetActive(false);
+
+    }
     private void OnCollisionEnter(Collision collision)
     {
+        if (collision.gameObject.CompareTag("Target")) 
+        {
+            StartCoroutine("targetdissapears", collision.gameObject);
+
+        }
+        
+        //gameObject.GetComponent<Rigidbody>().velocity = Vector3.zero;
         gameObject.GetComponent<Rigidbody>().isKinematic = true;
         gameObject.GetComponent<Rigidbody>().useGravity = false;
-        gameObject.GetComponent<Rigidbody>().velocity = Vector3.zero;
         Destroy(gameObject, 3);
     }
     // Start is called before the first frame update
