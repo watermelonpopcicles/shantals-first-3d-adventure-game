@@ -9,10 +9,13 @@ public class arowdisappear : MonoBehaviour
         yield return new WaitForSecondsRealtime(1);
         Debug.Log(target.tag);
         target.SetActive(false);
+        Destroy(gameObject);
 
     }
     private void OnCollisionEnter(Collision collision)
     {
+        gameObject.GetComponent<Rigidbody>().isKinematic = true;
+        gameObject.GetComponent<Rigidbody>().useGravity = false;
         if (collision.gameObject.CompareTag("Target")) 
         {
             StartCoroutine("targetdissapears", collision.gameObject);
@@ -20,9 +23,10 @@ public class arowdisappear : MonoBehaviour
         }
         
         //gameObject.GetComponent<Rigidbody>().velocity = Vector3.zero;
-        gameObject.GetComponent<Rigidbody>().isKinematic = true;
-        gameObject.GetComponent<Rigidbody>().useGravity = false;
-        Destroy(gameObject, 3);
+        
+        else {
+            Destroy(gameObject, 1);
+        }
     }
     // Start is called before the first frame update
     void Start()

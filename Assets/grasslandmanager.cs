@@ -1,13 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class grasslandmanager : MonoBehaviour
 {
     private int targetshit;
-    public float targettimer = 60;
+    public float targettimer = 30;
     private float ctime;
     public bool targetgamestart;
+    public TMP_Text timer;
 
     public void targetdestroyed() 
     {
@@ -32,6 +34,7 @@ public class grasslandmanager : MonoBehaviour
             if (ctime < targettimer)
             {
                 ctime += Time.deltaTime;
+                timer.text = "time: " + Mathf.RoundToInt(targettimer - ctime).ToString();
 
             }
             else 
