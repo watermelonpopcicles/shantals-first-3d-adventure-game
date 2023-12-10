@@ -18,6 +18,17 @@ public class shooting : MonoBehaviour
     public Transform notzoom;
     public Transform Bow;
     public Camera firstCamera;
+
+    public void unzoom() 
+    {
+        crosshair.SetActive(false);
+        Bow.SetParent(notzoom);
+        Bow.localPosition = Vector3.zero;
+        if (firstCamera != null)
+        {
+            firstCamera.fieldOfView = Mathf.MoveTowards(firstCamera.fieldOfView, FOV, lerpspeed * Time.deltaTime);
+        }
+    }
     // Start is called before the first frame update
     void Start()
     {

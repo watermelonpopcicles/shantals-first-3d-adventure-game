@@ -6,7 +6,7 @@ public class arowdisappear : MonoBehaviour
 {
     IEnumerator targetdissapears(GameObject target) 
     {
-        yield return new WaitForSecondsRealtime(1);
+        yield return new WaitForSecondsRealtime(0.5f);
         Debug.Log(target.tag);
         target.SetActive(false);
         Destroy(gameObject);
@@ -25,7 +25,7 @@ public class arowdisappear : MonoBehaviour
         //gameObject.GetComponent<Rigidbody>().velocity = Vector3.zero;
         
         else {
-            Destroy(gameObject, 1);
+            Destroy(gameObject, 0.5f);
         }
     }
     // Start is called before the first frame update

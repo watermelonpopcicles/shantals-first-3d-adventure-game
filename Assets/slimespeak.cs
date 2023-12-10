@@ -15,11 +15,36 @@ public class slimespeak : MonoBehaviour
     public Transform oldcampos;
     public GameObject arrowshootplayer;
     public grasslandmanager manager;
-
+    public bool resultChat;
+    bool afterPlaying;
+    public Camera mainCamera;
     // Start is called before the first frame update
     void Start()
     {
         arrowshootplayer.SetActive(false);
+    }
+
+    public void ResumeChat(bool gameresult) {
+        afterPlaying = true;
+        mainCamera.gameObject.SetActive(true);
+        player.gameObject.SetActive(true);
+        arrowshootplayer.SetActive(false);
+        manager.targetgamestart = false;
+
+        chatting = true;
+        canchat = false;
+        player.GetComponent<PlayerMovement>().enabled = false;
+        player.GetComponent<CharacterController>().enabled = false;
+        mainCamera.transform.SetParent(cameraloc);
+        mainCamera.transform.localPosition = Vector3.zero;
+        mainCamera.transform.localEulerAngles = Vector3.zero;
+        chat.gameObject.SetActive(true);
+        player.transform.position = chickposition.position;
+        player.transform.rotation = chickposition.rotation;
+        resultChat = gameresult;
+        chatnum = 0;
+  
+
     }
 
     // Update is called once per frame
@@ -29,13 +54,15 @@ public class slimespeak : MonoBehaviour
         {
             if(Input.GetKeyDown(KeyCode.E)) 
             {
+                
+
                 chatting = true;
                 canchat = false;
                 player.GetComponent<PlayerMovement>().enabled = false;
                 player.GetComponent<CharacterController>().enabled = false;
-                Camera.main.transform.SetParent(cameraloc);
-                Camera.main.transform.localPosition = Vector3.zero;
-                Camera.main.transform.localEulerAngles = Vector3.zero;
+                mainCamera.transform.SetParent(cameraloc);
+                mainCamera.transform.localPosition = Vector3.zero;
+                mainCamera.transform.localEulerAngles = Vector3.zero;
                 chat.gameObject.SetActive(true);
                 player.transform.position = chickposition.position;
                 player.transform.rotation = chickposition.rotation;
@@ -50,45 +77,101 @@ public class slimespeak : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.B))
             {
                 endchat();
-                
+
             }
-            if (Input.GetKeyDown(KeyCode.E)) 
+            if (Input.GetKeyDown(KeyCode.E))
             {
                 chatnum++;
             }
 
-            if (chatnum == 0)
+            if (afterPlaying)
             {
-                chat.text = "...";
-            }
-            if (chatnum == 1)
-            {
-                chat.text = "Hello and welcome to the first island! I'm glad you made it.";
-            }
-            if (chatnum == 2)
-            {
-                chat.text = "The next challenge we have for you is archery.";
-            }
-            if (chatnum == 3)
-            {
-                chat.text = "Use this bow and arrow to shoot all the targets in 1 minute!";
-            }
-            if (chatnum == 4)
-            {
-                chat.text = "Are you ready? Yes(Y)/No(E/B)";
-                if (Input.GetKeyDown(KeyCode.Y))
+                if (resultChat == true)
                 {
-                    Camera.main.gameObject.SetActive(false);
-                    player.gameObject.SetActive(false);
-                    arrowshootplayer.SetActive(true);
-                    manager.targetgamestart = true;
+                    if (chatnum == 0)
+                    {
+                        chat.text = "WOW! You did it!";
+                    }
+                    if (chatnum == 1)
+                    {
+                        chat.text = "You're the first to ever complete this challenge!";
+                    }
+                    if (chatnum == 2)
+                    {
+                        chat.text = "Hmmm....";
+                    }
+                    if (chatnum == 3)
+                    {
+                        chat.text = "You deserve a reward!";
+                    }
+                    if (chatnum == 4)
+                    {
+                        chat.text = "Talk to the slime on the top of the mountain.";
+                    }
+                    if (chatnum == 5)
+                    {
+                        chat.text = "He might just have something for you!";
+                    }
+                    if (chatnum == 6)
+                    {
+
+                        endchat();
+                    }
+                }
+                else {
+                    if (chatnum == 0)
+                    {
+                        chat.text = "Awwww you didn't complete the challenge in time :(";
+                    }
+                    if (chatnum == 1)
+                    {
+                        chat.text = "Come back and try again when ur ready!";
+                    }
+                    if (chatnum == 2)
+                    {
+
+                        endchat();
+                    }
 
                 }
             }
-            if (chatnum == 5)
+            else
             {
                 
-                endchat();
+
+                if (chatnum == 0)
+                {
+                    chat.text = "...";
+                }
+                if (chatnum == 1)
+                {
+                    chat.text = "Hello and welcome to this island! I'm glad you made it.";
+                }
+                if (chatnum == 2)
+                {
+                    chat.text = "I have an archery challenge for you!";
+                }
+                if (chatnum == 3)
+                {
+                    chat.text = "Use this bow and arrow to shoot all the targets in 1 minute!";
+                }
+                if (chatnum == 4)
+                {
+                    chat.text = "Are you ready? Yes(Y)/No(E/B)";
+                    if (Input.GetKeyDown(KeyCode.Y))
+                    {
+                        mainCamera.gameObject.SetActive(false);
+                        player.gameObject.SetActive(false);
+                        arrowshootplayer.SetActive(true);
+                        manager.targetgamestart = true;
+
+                    }
+                }
+                if (chatnum == 5)
+                {
+
+                    endchat();
+                }
             }
         }
         
@@ -98,7 +181,7 @@ public class slimespeak : MonoBehaviour
     
     void endchat()
     {
-        if (Camera.main == null)
+        if (mainCamera == null)
         {
             return;
         }
@@ -106,13 +189,14 @@ public class slimespeak : MonoBehaviour
         canchat = false;
         player.GetComponent<PlayerMovement>().enabled = true;
         player.GetComponent<CharacterController>().enabled = true;
-        
-            Camera.main.transform.SetParent(oldcampos);
-            Camera.main.transform.localPosition = Vector3.zero;
-            Camera.main.transform.localEulerAngles = Vector3.zero;
+
+        mainCamera.transform.SetParent(oldcampos);
+        mainCamera.transform.localPosition = Vector3.zero;
+        mainCamera.transform.localEulerAngles = Vector3.zero;
         
         chat.text = "...";
         chatnum = 0;
+        afterPlaying = false;
     }
     private void OnTriggerEnter(Collider other)
     {
