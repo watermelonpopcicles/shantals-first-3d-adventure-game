@@ -206,4 +206,12 @@ public class slimespeak : MonoBehaviour
             player = other.gameObject;
         }
     }
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.tag == "Player")
+        {
+            canchat = false;
+            player = other.gameObject;
+        }
+    }
 }
