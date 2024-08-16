@@ -107,11 +107,11 @@ public class slimespeakviking : MonoBehaviour
                     }
                     if (chatnum == 4)
                     {
-                        chat.text = "Talk to the slime on the top of the mountain.";
+                        chat.text = "Here, take this gem";
                     }
                     if (chatnum == 5)
                     {
-                        chat.text = "He might just have something for you!";
+                        chat.text = "hop on the boat to get to the next island";
                     }
                     if (chatnum == 6)
                     {
