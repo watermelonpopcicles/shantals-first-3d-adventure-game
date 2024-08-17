@@ -15,8 +15,6 @@ public class slimespeakviking : MonoBehaviour
     public Transform oldcampos;
     public GameObject arrowshootplayer;
     public grasslandmanager manager;
-    public bool resultChat;
-    bool afterPlaying;
     public Camera mainCamera;
     // Start is called before the first frame update
     void Start()
@@ -24,29 +22,6 @@ public class slimespeakviking : MonoBehaviour
         arrowshootplayer.SetActive(false);
     }
 
-    public void ResumeChat(bool gameresult)
-    {
-        afterPlaying = true;
-        mainCamera.gameObject.SetActive(true);
-        player.gameObject.SetActive(true);
-        arrowshootplayer.SetActive(false);
-        manager.targetgamestart = false;
-
-        chatting = true;
-        canchat = false;
-        player.GetComponent<PlayerMovement>().enabled = false;
-        player.GetComponent<CharacterController>().enabled = false;
-        mainCamera.transform.SetParent(cameraloc);
-        mainCamera.transform.localPosition = Vector3.zero;
-        mainCamera.transform.localEulerAngles = Vector3.zero;
-        chat.gameObject.SetActive(true);
-        player.transform.position = chickposition.position;
-        player.transform.rotation = chickposition.rotation;
-        resultChat = gameresult;
-        chatnum = 0;
-
-
-    }
 
     // Update is called once per frame
     void Update()
@@ -85,91 +60,33 @@ public class slimespeakviking : MonoBehaviour
                 chatnum++;
             }
 
-            if (afterPlaying)
+
             {
-                if (resultChat == true)
-                {
-                    if (chatnum == 0)
-                    {
-                        chat.text = "hello";
-                    }
-                    if (chatnum == 1)
-                    {
-                        chat.text = "nice too meet you";
-                    }
-                    if (chatnum == 2)
-                    {
-                        chat.text = "Hmmm....";
-                    }
-                    if (chatnum == 3)
-                    {
-                        chat.text = "You deserve a reward!";
-                    }
-                    if (chatnum == 4)
-                    {
-                        chat.text = "Here, take this gem";
-                    }
-                    if (chatnum == 5)
-                    {
-                        chat.text = "hop on the boat to get to the next island";
-                    }
-                    if (chatnum == 6)
-                    {
-
-                        endchat();
-                    }
-                }
-                else
-                {
-                    if (chatnum == 0)
-                    {
-                        chat.text = "Awwww you didn't complete the challenge in time :(";
-                    }
-                    if (chatnum == 1)
-                    {
-                        chat.text = "Come back and try again when ur ready!";
-                    }
-                    if (chatnum == 2)
-                    {
-
-                        endchat();
-                    }
-
-                }
-            }
-            else
-            {
-
-
                 if (chatnum == 0)
                 {
-                    chat.text = "...";
+                    chat.text = "hello";
                 }
                 if (chatnum == 1)
                 {
-                    chat.text = "Hello and welcome to this island! I'm glad you made it.";
+                    chat.text = "they sent you?";
                 }
                 if (chatnum == 2)
                 {
-                    chat.text = "I have an archery challenge for you!";
+                    chat.text = "Hmmm....";
                 }
                 if (chatnum == 3)
                 {
-                    chat.text = "Use this bow and arrow to shoot all the targets in 1 minute!";
+                    chat.text = "You deserve a reward!";
                 }
                 if (chatnum == 4)
                 {
-                    chat.text = "Are you ready? Yes(Y)/No(E/B)";
-                    if (Input.GetKeyDown(KeyCode.Y))
-                    {
-                        mainCamera.gameObject.SetActive(false);
-                        player.gameObject.SetActive(false);
-                        arrowshootplayer.SetActive(true);
-                        manager.targetgamestart = true;
-
-                    }
+                    chat.text = "Here, take this gem";
                 }
                 if (chatnum == 5)
+                {
+                    chat.text = "hop on the boat to get to the next island";
+                }
+                if (chatnum == 6)
                 {
 
                     endchat();
@@ -198,7 +115,6 @@ public class slimespeakviking : MonoBehaviour
 
         chat.text = "...";
         chatnum = 0;
-        afterPlaying = false;
     }
     private void OnTriggerEnter(Collider other)
     {
