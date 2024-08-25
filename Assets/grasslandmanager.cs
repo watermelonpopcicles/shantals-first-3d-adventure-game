@@ -47,7 +47,7 @@ public class grasslandmanager : MonoBehaviour
                 if (liveTargets == 0) {
                     ArcherGameWon = true;
                     ctime = targettimer;
-                    yellowslime.SetActive(true);
+                    //yellowslime.SetActive(true);
 
                 }
                 

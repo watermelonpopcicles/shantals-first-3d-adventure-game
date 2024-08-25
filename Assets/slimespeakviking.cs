@@ -13,13 +13,12 @@ public class slimespeakviking : MonoBehaviour
     GameObject player;
     public Transform chickposition;
     public Transform oldcampos;
-    public GameObject arrowshootplayer;
     public grasslandmanager manager;
     public Camera mainCamera;
     // Start is called before the first frame update
     void Start()
     {
-        arrowshootplayer.SetActive(false);
+
     }
 
 

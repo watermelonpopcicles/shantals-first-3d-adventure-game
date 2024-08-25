@@ -18,10 +18,12 @@ public class slimespeak : MonoBehaviour
     public bool resultChat;
     bool afterPlaying;
     public Camera mainCamera;
+    public GameObject vikingslime;
     // Start is called before the first frame update
     void Start()
     {
         arrowshootplayer.SetActive(false);
+        vikingslime.SetActive(false);
     }
 
     public void ResumeChat(bool gameresult) {
@@ -114,7 +116,7 @@ public class slimespeak : MonoBehaviour
                     }
                     if (chatnum == 6)
                     {
-
+                        vikingslime.SetActive(true);
                         endchat();
                     }
                 }
